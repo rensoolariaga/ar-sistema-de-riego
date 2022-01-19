@@ -42,11 +42,9 @@ export function getAllProjects(){
 };
 
 export function addProject(payload) {
-  console.log('soy el payload de addProject: ', payload)
   return async function(dispatch) {
     await axios.post(`/proyect`, payload)
     .then((response) => {
-      console.log('soy el response de addProject: ', response)
       dispatch({
         type: ADD_PROJECT,
         payload: response.data
