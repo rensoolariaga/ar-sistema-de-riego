@@ -24,19 +24,19 @@ const { preloader } = require('./src/utils/preloader.js')
 // withOutDeploy
 
 // Syncing all the models at once
-conn.sync({ force: false }).then(() => {
-  server.listen(3001, async () => {
-    preloader()
-    console.log('%s'); // eslint-disable-line no-console
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
-  });
-});
+// conn.sync({ force: false }).then(() => {
+//   server.listen(3001, async () => {
+//     preloader()
+//     console.log('%s'); // eslint-disable-line no-console
+//     console.log('%s listening at 3001'); // eslint-disable-line no-console
+//   });
+// });
 
 
 // // deploy 
-// conn.sync({ force: false }).then(() => {
-//   server.listen(process.env.PORT, () => {
-//   preloader()
-//   console.log("%s listening at 3001"); // eslint-disable-line no-console
-//   });
-//   });
+conn.sync({ force: false }).then(() => {
+  server.listen(process.env.PORT, () => {
+  preloader()
+  console.log("%s listening at 3001"); // eslint-disable-line no-console
+  });
+  });

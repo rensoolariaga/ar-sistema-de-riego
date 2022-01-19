@@ -12,13 +12,13 @@ import {
     UPDATE_PROJECT,
 }  from './actionTypes';
 
-import { 
-  LOCALHOST 
-} from '../../constants';
+// import { 
+//   LOCALHOST 
+// } from '../../constants';
 
 export function projectByTitle(payload) {
   return async function(dispatch) {
-     await axios.get(`${LOCALHOST}/proyect?title=${payload}`)
+     await axios.get(`/proyect?title=${payload}`)
      .then((response) => {
        dispatch({
          type: GET_PROJECT_BY_TITLE,
@@ -31,7 +31,7 @@ export function projectByTitle(payload) {
 
 export function getAllProjects(){
   return async function(dispatch) {
-    await axios.get(`${LOCALHOST}/proyect`)
+    await axios.get(`/proyect`)
     .then((response) => {
       dispatch({
         type: GET_ALL_PROJECTS,
@@ -43,7 +43,7 @@ export function getAllProjects(){
 
 export function addProject(payload) {
   return async function(dispatch) {
-    await axios.post(`${LOCALHOST}/proyect`, payload)
+    await axios.post(`/proyect`, payload)
     .then((response) => {
       dispatch({
         type: ADD_PROJECT,
@@ -55,7 +55,7 @@ export function addProject(payload) {
 
 export function login(payload) {
   return async function(dispatch) {
-    await axios.get(`${LOCALHOST}/admin`, payload) 
+    await axios.get(`/admin`, payload) 
     .then((response) => {
       dispatch({
         type: LOGIN,
@@ -67,7 +67,7 @@ export function login(payload) {
 
 export function sendMail(payload) {
   return async function(dispatch) {
-    await axios.post(`${LOCALHOST}/sendmail`, payload)
+    await axios.post(`/sendmail`, payload)
     .then((response) => {
       dispatch({
         type: SEND_MAIL,
@@ -79,7 +79,7 @@ export function sendMail(payload) {
 
 export function projectById(payload) {
   return async function(dispatch) {
-    await axios.get(`${LOCALHOST}/proyect/byId?id=${payload}`)
+    await axios.get(`/proyect/byId?id=${payload}`)
     .then((response) => {
       dispatch({
         type: PROJECT_BY_ID,
@@ -100,7 +100,7 @@ export function clearProjectById () {
 
 export function deleteProject(payload) {
 return async function(dispatch) {
-  await axios.delete(`${LOCALHOST}/proyect?id=${payload}`)
+  await axios.delete(`/proyect?id=${payload}`)
   .then((response) => {
     dispatch({
       type: DELETE_PROJECT
@@ -111,7 +111,7 @@ return async function(dispatch) {
 
 export function updateProject(payload) {
   return async function(dispatch){
-    await axios.put(`${LOCALHOST}/proyect`, payload)
+    await axios.put(`/proyect`, payload)
     .then((response) => {
       dispatch({
         type: UPDATE_PROJECT,
