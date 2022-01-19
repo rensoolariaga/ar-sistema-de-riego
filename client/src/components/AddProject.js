@@ -4,16 +4,16 @@ import { useDispatch } from "react-redux";
 
 import { addProject } from "../Redux/actions/actions.js";
 import Footer from "./Footer.js";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import NavBar from "./NavBar.js";
 
 // firebase
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-import { storage } from "./FirebaseConfig.js";
+// import { storage } from "./FirebaseConfig.js";
 
 export default function AddProject() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -117,6 +117,7 @@ export default function AddProject() {
     e.preventDefault();
     image ? (form.image = image) : console.log("estoy vacia");
     upload ? (form.file = upload) : console.log("estoy vacio");
+    console.log('soy el form antes de despachar: ', form)
     dispatch(addProject(form));
     setForm({
       title: "",
@@ -128,8 +129,8 @@ export default function AddProject() {
     setImage("");
     setLoading("");
     setUpload("");
-    navigate("/admin");
-    window.location.reload();
+    // navigate("/admin");
+    // window.location.reload();
   }
 
   return (
