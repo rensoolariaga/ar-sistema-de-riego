@@ -9,7 +9,7 @@ import NavBar from "./NavBar.js";
 
 // firebase
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-// import { storage } from "./FirebaseConfig.js";
+import { storage } from "./FirebaseConfig.js";
 
 export default function AddProject() {
   const dispatch = useDispatch();
