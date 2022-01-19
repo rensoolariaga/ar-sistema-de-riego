@@ -848,7 +848,7 @@ export default function Productos() {
             <img
               src="ProductosPDF/Conectores/WhatsApp Image 2020-05-15 at 14.57.54.jpeg"
               className="ifr"
-              alt="no image"
+              alt="error"
             />
           </Modal.Body>
         </Modal>
