@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-
 import { useDispatch } from "react-redux";
-
 import { addProject } from "../Redux/actions/actions.js";
 import Footer from "./Footer.js";
 import { useNavigate } from "react-router-dom";
